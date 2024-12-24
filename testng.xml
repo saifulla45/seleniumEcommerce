@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests">
+    <listeners>
+        <listener class-name="com.ecom.testComponents.Listeners"/>
+    </listeners>
+    <test name="All Test">
+        <classes>
+            <class name="com.ecom.test.ErrorValidationTest"/>
+            <class name="com.ecom.test.SubmitOrderTest"/>
+            <class name="com.ecom.test.ValidInvalidLoginTest"/>
+        </classes>
+    </test>
+</suite>
