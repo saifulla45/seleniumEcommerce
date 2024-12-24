@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class SubmitOrderTest extends TestBase {
-    String productName = "ZARA COAT 3";
+    String productName = "IPHONE 13 PRO";
 
     @Test
     public void submitOrder() throws InterruptedException {
