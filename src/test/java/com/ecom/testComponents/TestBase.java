@@ -33,17 +33,21 @@ public class TestBase {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        if(browserName.equalsIgnoreCase("chrome")) {
+        if(browserName.contains("chrome")) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--incognito");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--allow-running-insecure-content");
+            if(browserName.contains("headless"))
+                options.addArguments("--headless");
             driver = new ChromeDriver(options);
-        } else if (browserName.equalsIgnoreCase("firefox")) {
+        } else if (browserName.contains("firefox")) {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.addArguments("-private");
             firefoxOptions.addArguments("--start-maximized");
             firefoxOptions.addArguments("--ignore-certificate-errors");
+            if(browserName.contains("headless"))
+                firefoxOptions.addArguments("--headless");
             driver = new FirefoxDriver(firefoxOptions);
         }
         driver.manage().window().maximize();
